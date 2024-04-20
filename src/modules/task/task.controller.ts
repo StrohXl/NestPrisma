@@ -8,7 +8,7 @@ import {
   Put,
 } from '@nestjs/common';
 import { TaskService } from './task.service';
-import { Task } from '@prisma/client';
+import { TaskCreate } from './task.dto';
 
 @Controller('task')
 export class TaskController {
@@ -23,12 +23,12 @@ export class TaskController {
   }
 
   @Post()
-  createTask(@Body() body: Task) {
+  createTask(@Body() body: TaskCreate) {
     return this.taskService.createTask(body);
   }
 
   @Put(':id')
-  updateTask(@Param('id') id: string, @Body() body: Task) {
+  updateTask(@Param('id') id: string, @Body() body: TaskCreate) {
     return this.taskService.updateTask(Number(id), body);
   }
 

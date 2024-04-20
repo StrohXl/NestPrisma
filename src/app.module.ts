@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { TaskModule } from './modules/task/task.module';
 
 @Module({
-  imports: [TaskModule],
+  imports: [TaskModule,],
   controllers: [AppController],
   providers: [AppService],
 })
